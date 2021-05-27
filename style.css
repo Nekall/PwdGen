@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("assets/fonts/NotoSansJP-Regular.otf");
+}
+
+*{
+  font-family: "NotoSansJP";
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.home-page{
+  justify-content: center;
+  display: flex;
+  background-color: #323146;
+  width: 100vw;
+  height: 100vh;
+}
+
+.lock-computer{
+  padding: 100px 0px 50px 0px;
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.btn{
+  border: none;
+  border-radius: 2em;
+  padding: 5px;
+  background-color: #50758d;
+  color: white;
+  display: block;
+  width: 200px;
+  margin: 25px 0px 25px 0px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #2b597f;
+
+}
+
+.password-result{
+  padding: 10px;
+  border: solid 2px #50758d;
+  border-radius: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  cursor: copy;
+}
