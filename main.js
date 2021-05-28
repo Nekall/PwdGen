@@ -35,4 +35,8 @@ function generatePassword() {
 function copyPassword() {
   let copyText = document.getElementById("password");
   navigator.clipboard.writeText(copyText.innerHTML);
+
+  document.getElementById("copied").classList.add("active")
+  setInterval(function(){ document.getElementById("copied").classList.remove("active"); }, 2000);
+
 };

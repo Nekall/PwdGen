@@ -30,7 +30,7 @@
 .btn{
   border: none;
   border-radius: 2em;
-  padding: 5px;
+  padding: 10px;
   background-color: #50758d;
   color: white;
   display: block;
@@ -46,11 +46,31 @@
 }
 
 .password-result{
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   border: solid 2px #50758d;
   border-radius: 2em;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
   cursor: copy;
+  transition: 0.2s;
+}
+
+.password-result:active{
+  background-color: #2b597f;
+}
+
+.copy-confirmation{
+  height: 25px;
+  width: 200px;
+}
+
+.copied{
+  font-weight: bold;
+  color: rgb(137, 242, 57);
+  float: right;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.copied.active{
+  visibility: visible;
 }
