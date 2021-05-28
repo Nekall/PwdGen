@@ -10,18 +10,24 @@ function generatePassword() {
   let arrSymbol = ['@', '!', '}', '#', '$', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', ';', ':', ',', '.', '>', '/', '?'];
   let randomChar = Math.random().toString(36).slice(2, 3);
   let size = 15;
-  let finalPassword = '';
+  let finalPassword = "";
+  let needCapital = document.getElementById("capital");
+  let needSpecial = document.getElementById("special");
 
 
   for(let i = 0; i < size ;i++){
     randomChar = Math.random().toString(36).slice(3, 4);
     finalPassword += randomChar;
 
-    if(randomBoolean() === true){
+    if(randomBoolean() === true && needSpecial.checked === true){
       if(randomBoolean() === true){
         finalPassword += arrSymbol.sample();
         i++;
-      }else{
+      }
+    }
+
+    if(randomBoolean() === true && needCapital.checked === true){
+      if(randomBoolean() === true){
         finalPassword += randomChar.toUpperCase();
         i++;
       }
