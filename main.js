@@ -2,30 +2,30 @@ Array.prototype.sample = function(){
   return this[Math.floor(Math.random()*this.length)];
 }
 
+function randomBoolean(){
+  return (Math.random() >= 0.5);
+};
+
 function generatePassword() {
-  let arrSymbol = ['@', '!', '}', '#', '$', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', ';', ':', ',', '.', '<', '>', '/', '?'];
+  let arrSymbol = ['@', '!', '}', '#', '$', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', ';', ':', ',', '.', '>', '/', '?'];
   let randomChar = Math.random().toString(36).slice(2, 3);
-  let size = [14, 15, 16, 17, 18, 19].sample();
+  let size = 15;
   let finalPassword = '';
 
 
   for(let i = 0; i < size ;i++){
-    let randomBoolean = (Math.random() >= 0.5);
-    randomChar = Math.random().toString(36).slice(2, 3);
+    randomChar = Math.random().toString(36).slice(3, 4);
     finalPassword += randomChar;
-    if(randomBoolean === true){
-      if(randomBoolean === true){
+
+    if(randomBoolean() === true){
+      if(randomBoolean() === true){
+        finalPassword += arrSymbol.sample();
+        i++;
+      }else{
         finalPassword += randomChar.toUpperCase();
         i++;
       }
     }
-    if(randomBoolean === true){
-      if(randomBoolean === true){
-        finalPassword += arrSymbol.sample();
-        i++;
-      }
-    }
-
   }
 
 
