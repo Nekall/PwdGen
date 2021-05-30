@@ -46,3 +46,7 @@ function copyPassword() {
   setInterval(function(){ document.getElementById("copied").classList.remove("active"); }, 2000);
 
 };
+
+window.onload = function() {
+  generatePassword(); //launch ine time for the first password
+};
