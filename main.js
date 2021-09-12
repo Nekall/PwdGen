@@ -30,10 +30,7 @@ function generatePassword() {
       }
     }
   }
-
-  console.log("%c état du password après :" , 'background: #222; color: #ffffff',
-  finalPassword, "longueur du mot de passe:" ,finalPassword.length);
-
+  
   document.getElementById("password").innerHTML = finalPassword;
 };
 
