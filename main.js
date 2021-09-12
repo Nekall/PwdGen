@@ -7,33 +7,32 @@ function randomBoolean(){
 };
 
 function generatePassword() {
-  let arrSymbol = ['@', '!', '}', '#', '$', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', ';', ':', ',', '.', '>', '/', '?'];
+  let arrSymbol = ['@', '!', '}', '#', '$', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', ';', ':', ',', '.', '/', '?'];
   let randomChar = Math.random().toString(36).slice(2, 3);
-  let size = 15;
   let finalPassword = "";
-  let needCapital = document.getElementById("capital");
-  let needSpecial = document.getElementById("special");
+  let needCapital = document.getElementById("capital").checked;
+  let needSpecial = document.getElementById("special").checked;
 
 
-  for(let i = 0; i < size ;i++){
+  while(finalPassword.length < 15){
     randomChar = Math.random().toString(36).slice(3, 4);
     finalPassword += randomChar;
 
-    if(randomBoolean() === true && needSpecial.checked === true){
+    if(randomBoolean() === true && needSpecial === true && finalPassword.length < 15){
       if(randomBoolean() === true){
         finalPassword += arrSymbol.sample();
-        i++;
       }
     }
 
-    if(randomBoolean() === true && needCapital.checked === true){
+    if(randomBoolean() === true && needCapital === true && finalPassword.length < 15){
       if(randomBoolean() === true){
         finalPassword += randomChar.toUpperCase();
-        i++;
       }
     }
   }
 
+  console.log("%c état du password après :" , 'background: #222; color: #ffffff',
+  finalPassword, "longueur du mot de passe:" ,finalPassword.length);
 
   document.getElementById("password").innerHTML = finalPassword;
 };
@@ -44,9 +43,8 @@ function copyPassword() {
 
   document.getElementById("copied").classList.add("active")
   setInterval(function(){ document.getElementById("copied").classList.remove("active"); }, 2000);
-
 };
 
 window.onload = function() {
-  generatePassword(); //launch ine time for the first password
+  generatePassword(); //launch one time for the first password
 };
