@@ -3,17 +3,17 @@
   src: url("assets/fonts/NotoSansJP-Regular.otf");
 }
 
-*{
+body{
   font-family: "NotoSansJP";
   color: white;
   margin: 0;
   padding: 0;
+  background-color: #000000;
 }
 
 .home-page{
   justify-content: center;
   display: flex;
-  background-color: #323146;
   width: 100vw;
   height: 100vh;
 }
@@ -29,9 +29,8 @@
 
 .btn{
   border: none;
-  border-radius: 2em;
   padding: 10px;
-  background-color: #50758d;
+  background-color: #3a53d0;
   color: white;
   display: block;
   width: 200px;
@@ -47,8 +46,7 @@
 
 .password-result{
   padding: 10px 10px 10px 20px;
-  border: solid 2px #50758d;
-  border-radius: 2em;
+  border: solid 2px #3a53d0;
   display: block;
   cursor: copy;
   transition: 0.2s;
