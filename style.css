@@ -64,7 +64,7 @@ body{
 
 .copied{
   font-weight: bold;
-  color: rgb(137, 242, 57);
+  color: #3a53d0;
   float: right;
   visibility: hidden;
   transition: 0.5s;
