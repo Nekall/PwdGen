@@ -41,7 +41,7 @@ const copyPassword=()=>{
   let gif = document.getElementById("copied-gif");
   copiedContainer.classList.add("active")
   gif.classList.add("start")
-  gif.src = "assets/images/copied.gif";
+  gif.src = "https://raw.githubusercontent.com/Nekall/pwd/main/assets/images/copied.gif";
 
   let startAnimation = setInterval(()=>{ 
     copiedContainer.classList.remove("active"); 
