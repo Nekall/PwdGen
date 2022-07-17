@@ -18,8 +18,14 @@
           <input type="checkbox" id="capital" name="capital" checked>
           <label for="scales">Capital letters</label>
         </div>
+        <div>
+          <input type="checkbox" id="number" name="number" checked>
+          <label for="scales">Without numbers</label>
+        </div>
         <div class="copy-confirmation">
-          <span class="copied" id="copied">Copied ✓</span>
+          <span class="copied" id="copied">
+            <img  class="copied-gif" id="copied-gif" src="" alt="copied animation">
+          </span>
         </div>
         <span class="password-result" id="password" onclick="copyPassword()">Your password here</span>
         <button class="btn" type="button" name="button" onclick="generatePassword()">Generate</button>

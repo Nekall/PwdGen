@@ -1,47 +1,55 @@
-Array.prototype.sample = function(){
-  return this[Math.floor(Math.random()*this.length)];
-}
+randomBoolean=()=>{return (Math.random() >= 0.5)};
 
-function randomBoolean(){
-  return (Math.random() >= 0.5);
-};
-
-function generatePassword() {
+const generatePassword=()=>{
   let arrSymbol = ['@', '!', '}', '#', '$', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', ';', ':', ',', '.', '/', '?'];
   let randomChar = Math.random().toString(36).slice(2, 3);
   let finalPassword = "";
   let needCapital = document.getElementById("capital").checked;
   let needSpecial = document.getElementById("special").checked;
+  let withoutNumber = document.getElementById("number").checked;
 
-
-  while(finalPassword.length < 15){
-    randomChar = Math.random().toString(36).slice(3, 4);
-    finalPassword += randomChar;
-
-    if(randomBoolean() === true && needSpecial === true && finalPassword.length < 15){
-      if(randomBoolean() === true){
-        finalPassword += arrSymbol.sample();
+  const setupPassword=()=>{
+    while(finalPassword.length < 15){
+      randomChar = Math.random().toString(36).slice(3, 4);
+      // Wihtout Number
+      if(withoutNumber && !isNaN(Number(randomChar)) && finalPassword.length < 15)setupPassword(); 
+      // Length
+      if(finalPassword.length < 15){
+        finalPassword += randomChar;
+      }else{
+        break;
+      } 
+      // Special
+      if(randomBoolean() && needSpecial && finalPassword.length < 15){
+        if(randomBoolean())finalPassword += arrSymbol[Math.floor(Math.random() * arrSymbol.length)];
       }
-    }
-
-    if(randomBoolean() === true && needCapital === true && finalPassword.length < 15){
-      if(randomBoolean() === true){
-        finalPassword += randomChar.toUpperCase();
+      // Capital
+      if(randomBoolean() && needCapital && finalPassword.length < 15){
+        if(randomBoolean())finalPassword += randomChar.toUpperCase();
       }
     }
   }
-  
+  setupPassword();
   document.getElementById("password").innerHTML = finalPassword;
 };
 
-function copyPassword() {
+const copyPassword=()=>{
   let copyText = document.getElementById("password");
   navigator.clipboard.writeText(copyText.innerHTML);
 
-  document.getElementById("copied").classList.add("active")
-  setInterval(function(){ document.getElementById("copied").classList.remove("active"); }, 2000);
+  let copiedContainer = document.getElementById("copied");
+  let gif = document.getElementById("copied-gif");
+  copiedContainer.classList.add("active")
+  gif.classList.add("start")
+  gif.src = "assets/images/copied.gif";
+
+  let startAnimation = setInterval(()=>{ 
+    copiedContainer.classList.remove("active"); 
+    gif.src = "assets/images/copied.gif";
+    gif.classList.remove("start");
+    clearInterval(startAnimation);
+  }, 3000);
 };
 
-window.onload = function() {
-  generatePassword(); //launch one time for the first password
-};
+window.onload=()=>generatePassword(); //launch one time for the first password
+
