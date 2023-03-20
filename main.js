@@ -36,19 +36,6 @@ const generatePassword=()=>{
 const copyPassword=()=>{
   let copyText = document.getElementById("password");
   navigator.clipboard.writeText(copyText.innerHTML);
-
-  let copiedContainer = document.getElementById("copied");
-  let gif = document.getElementById("copied-gif");
-  copiedContainer.classList.add("active")
-  gif.classList.add("start")
-  gif.src = "https://raw.githubusercontent.com/Nekall/pwd/main/assets/images/copied.gif";
-
-  let startAnimation = setInterval(()=>{ 
-    copiedContainer.classList.remove("active"); 
-    gif.src = "assets/images/copied.gif";
-    gif.classList.remove("start");
-    clearInterval(startAnimation);
-  }, 3000);
 };
 
 window.onload=()=>generatePassword(); //launch one time for the first password

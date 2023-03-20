@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-    <script type="text/javascript" src="main.js"></script>
-    <title>Password Generator</title>
-  </head>
-  <body>
-    <div class="home-page">
-      <div class="user-interface">
-        <div>
-          <input type="checkbox" id="special" name="special" checked>
-          <label for="scales">Special characters</label>
-        </div>
-        <div>
-          <input type="checkbox" id="capital" name="capital" checked>
-          <label for="scales">Capital letters</label>
-        </div>
-        <div>
-          <input type="checkbox" id="number" name="number">
-          <label for="scales">Without numbers</label>
-        </div>
-        <span class="password-result" id="password" onclick="copyPassword()">Your password here</span>
-        <button class="btn" type="button" name="button" onclick="generatePassword()">Generate</button>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <script type="text/javascript" src="main.js"></script>
+  <title>Password Generator</title>
+</head>
+
+<body>
+  <div class="home-page">
+    <div class="user-interface">
+      <div>
+        <p>
+          *****************************************
+        </p>
+        <p>
+          * . [●●●●] PwdGen ― v0.0.2 | 03-2023 . *
+        </p>
+        <p>
+          * . --------------------Github: @Nekall *
+        </p>
+        <p>
+          *****************************************
+        </p>
       </div>
+      <div>
+        <input type="checkbox" id="special" name="special" checked>
+        <label for="scales">Special characters</label>
+      </div>
+      <div>
+        <input type="checkbox" id="capital" name="capital" checked>
+        <label for="scales">Capital letters</label>
+      </div>
+      <div>
+        <input type="checkbox" id="number" name="number">
+        <label for="scales">Without numbers</label>
+      </div>
+      <button class="btn" type="button" name="button" onclick="generatePassword()">Generate</button>
+      <span class="password-result" id="password" onclick="copyPassword()">Your password here</span>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

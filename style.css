@@ -18,6 +18,12 @@ body {
   background-color: #000;
 }
 
+input[type="checkbox"] {
+  border: 1px solid #fff;
+  accent-color: #fff;
+  color: #000;
+}
+
 .home-page{
   display: flex;
   width: 100vw;
@@ -27,29 +33,36 @@ body {
 .btn{
   border: none;
   padding: 10px;
-  background-color: #3a53d0;
-  color: white;
+  background-color: #fff;
+  color: #000;
   display: block;
   width: 200px;
   margin: 25px 0px 25px 0px;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
+  border: solid 1px #fff;
 }
 
 .btn:hover{
-  background-color: #2b597f;
-
+  background-color: #000;
+  color: #fff;
+  border: solid 1px #fff;
 }
 
 .password-result{
   padding: 10px 10px 10px 20px;
-  border: solid 2px #3a53d0;
+  border-left: solid 2px #fff;
   display: block;
   cursor: copy;
   transition: 0.2s;
   position:relative;
 }
 
+.password-result:hover{
+  background-color: #121212;
+}
+
 .password-result:active{
-  background-color: #2b597f;
+  background-color: #fff;
+  color: #000;
 }
