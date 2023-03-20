@@ -1,30 +1,27 @@
-@font-face {
-  font-family: "NotoSansJP";
-  src: url("assets/fonts/NotoSansJP-Regular.otf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
-body{
-  font-family: "NotoSansJP";
-  color: white;
+* {
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background-color: #000;
 }
 
 .home-page{
-  justify-content: center;
   display: flex;
   width: 100vw;
   height: 100vh;
-}
-
-.lock-computer{
-  padding: 100px 0px 50px 0px;
-  width: 150px;
-  height: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
 }
 
 .btn{
@@ -55,33 +52,4 @@ body{
 
 .password-result:active{
   background-color: #2b597f;
-}
-
-.copy-confirmation{
-  height: 35px;
-  width: 200px;
-}
-
-.copied{
-  font-weight: bold;
-  color: #3a53d0;
-  float: right;
-  visibility: hidden;
-  transition: 0.5s;
-}
-
-.copied.active{
-  visibility: visible;
-}
-
-.copied-gif{
-  z-index: -1;
-  position: absolute;
-  height: 100px;
-  margin: -35px -0 0 -85px;
-  display: none;
-}
-
-.copied-gif.start{
-  display: block;
 }
